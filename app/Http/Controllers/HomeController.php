@@ -106,9 +106,9 @@ class HomeController extends Controller
                 ->withInput();
         }
 
-        $blog = new User();
-        $blog = $this->saveDetails($request, $blog);
-        $blog->save();
+        $user = new User();
+        $user = $this->saveDetails($request, $user);
+        $user->save();
 
         $request->session()->flash('alert-success', 'User successful created.');
         return redirect()->back();
@@ -157,10 +157,10 @@ class HomeController extends Controller
         }
 
 
-        $blog = User::find($id);
-        $blog = $this->saveDetails($request, $blog);
-        $blog->save();
-        $request->session()->flash('alert-success', 'Blog successful updated.');
+        $user = User::find($id);
+        $user = $this->saveDetails($request, $user);
+        $user->save();
+        $request->session()->flash('alert-success', 'User successful updated.');
         return redirect()->back();
     }
 
